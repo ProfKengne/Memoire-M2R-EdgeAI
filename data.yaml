@@ -1,0 +1,14 @@
+# 💡 On indique à YOLO la racine du projet (le point de départ)
+train: ./datasets/cctv-person-detection/train/images
+val: ./datasets/cctv-person-detection/valid/images
+test: ./datasets/cctv-person-detection/test/images
+
+nc: 1
+names: ['person']
+
+roboflow:
+  workspace: konkuk-university-9whom 
+  project: cctv-person-detection
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/konkuk-university-9whom/cctv-person-detection/dataset/3
