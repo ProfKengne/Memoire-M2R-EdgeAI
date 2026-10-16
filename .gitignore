@@ -5,3 +5,32 @@ runs/
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Donnees personnelles et sorties d'execution (ne jamais publier)
+*.avi
+*.mp4
+Journal_Alertes_*.jsonl
+Video_surveillance_*
+
+# Environnement Python et poids volumineux
+ia_env/
+__pycache__/
+*.pt
+!ai_model/yolov8n.pt
+!ai_model/yolo26n.pt
+
+# Fichiers auxiliaires LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz
+*.idx
+*.ind
+*.ilg

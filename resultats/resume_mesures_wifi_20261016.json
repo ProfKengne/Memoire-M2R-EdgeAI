@@ -1,0 +1,69 @@
+{
+  "date": "20261016_182841",
+  "duree_session_s": 300.1,
+  "trames_mesurees": 6206,
+  "trames_echauffement_ignorees": 30,
+  "resolution": "1280x720",
+  "seuil_confiance": 0.55,
+  "liaison": "Wi-Fi UDP",
+  "fps_bout_en_bout": {
+    "n": 6206,
+    "moyenne": 21.16,
+    "ecart_type": 2.06,
+    "min": 5.87,
+    "p5": 16.22,
+    "mediane": 21.43,
+    "p95": 24.06,
+    "max": 33.15
+  },
+  "temps_total_ms": {
+    "n": 6206,
+    "moyenne": 47.86,
+    "ecart_type": 6.88,
+    "min": 30.17,
+    "p5": 41.56,
+    "mediane": 46.66,
+    "p95": 61.65,
+    "max": 170.22
+  },
+  "capture_ms": {
+    "n": 6206,
+    "moyenne": 8.64,
+    "ecart_type": 3.24,
+    "min": 4.96,
+    "p5": 6.86,
+    "mediane": 8.47,
+    "p95": 10.28,
+    "max": 92.66
+  },
+  "detection_suivi_ms": {
+    "n": 6206,
+    "moyenne": 25.75,
+    "ecart_type": 3.51,
+    "min": 13.07,
+    "p5": 21.46,
+    "mediane": 25.22,
+    "p95": 30.72,
+    "max": 69.25
+  },
+  "envoi_udp_journal_ms": {
+    "n": 6206,
+    "moyenne": 0.57,
+    "ecart_type": 0.67,
+    "min": 0.24,
+    "p5": 0.29,
+    "mediane": 0.5,
+    "p95": 0.73,
+    "max": 10.75
+  },
+  "annotation_video_affichage_ms": {
+    "n": 6206,
+    "moyenne": 12.9,
+    "ecart_type": 3.86,
+    "min": 5.14,
+    "p5": 6.83,
+    "mediane": 12.75,
+    "p95": 20.85,
+    "max": 27.04
+  }
+}
