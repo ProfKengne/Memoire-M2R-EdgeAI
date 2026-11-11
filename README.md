@@ -15,9 +15,17 @@ Le système détecte localement les personnes dans un flux vidéo avec **YOLOv8n
   Les deux premiers scripts chronomètrent chaque étape de la boucle et produisent un résumé statistique (`DUREE_MESURE_S` règle la durée de la session, 300 s par défaut).
 * `firmware_esp32/` : micrologiciel PlatformIO / Arduino de l'ESP32 :
   * `main.cpp` : version liaison série ;
-  * `main_WIFI.cpp` : version Wi-Fi UDP (renseigner `VOTRE_SSID` et `VOTRE_MOT_DE_PASSE` localement, **ne jamais publier les vrais identifiants**).
+  * `main_WIFI.cpp` : version Wi-Fi UDP avec interface graphique animée sur l'OLED (renseigner `VOTRE_SSID` et `VOTRE_MOT_DE_PASSE` localement, **ne jamais publier les vrais identifiants**).
 * `resultats/` : mesures temporelles de la chaîne complète (session Wi-Fi de 5 min).
 * `docs/` : documentation technique.
+
+## 🖥️ Interface de l'afficheur OLED
+
+La seconde version du micrologiciel est organisée en machine à états (attente du flux, zone RAS, intrusion, fin de session, perte du Wi-Fi). Chaque état a son écran : radar animé en attente, bouclier pour la zone RAS, alerte clignotante avec le nombre de personnes en cas d'intrusion, et puissance du signal Wi-Fi dans le bandeau. Le nœud lit tous les datagrammes reçus et garde le plus récent ; sans message pendant 3 s, il revient à l'écran d'attente.
+
+![Écrans de l'afficheur OLED](docs/apercu-ecrans-oled.png)
+
+Le script Python envoie par défaut en diffusion (`255.255.255.255`), ce qui fonctionne aussi avec le partage de connexion d'un téléphone (point d'accès en **2,4 GHz**, sécurité **WPA2**). Pour viser une adresse précise : `set ESP32_IP=192.168.x.y` avant de lancer le script.
 
 ## 📊 Résultats principaux
 

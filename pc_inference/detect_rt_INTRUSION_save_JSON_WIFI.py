@@ -10,7 +10,13 @@ import statistics
 from ultralytics import YOLO
 
 # ⚙️ CONFIGURATION RÉSEAU UDP
-ESP32_IP = "192.168.1.197"
+# Adresse de l'ESP32 :
+#  - laissée à "255.255.255.255" (diffusion), le PC envoie à tout le réseau local :
+#    cela fonctionne aussi bien sur le Wi-Fi de la maison que sur le partage de
+#    connexion du téléphone, sans connaître l'adresse IP attribuée à l'ESP32 ;
+#  - on peut aussi forcer l'adresse affichée sur l'OLED, par exemple :
+#    set ESP32_IP=192.168.43.25   (Windows, avant de lancer le script)
+ESP32_IP = os.environ.get("ESP32_IP", "255.255.255.255")
 UDP_PORT = 4210  # Port arbitraire identique à celui de l'ESP32
 
 # ⏱️ CONFIGURATION DES MESURES
@@ -20,6 +26,8 @@ DUREE_MESURE_S = float(os.environ.get("DUREE_MESURE_S", "300"))
 
 # Initialisation du socket UDP
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)  # autorise l'envoi en diffusion
+print(f"📡 Envoi UDP vers {ESP32_IP}:{UDP_PORT}")
 
 
 def resume_statistique(valeurs):
