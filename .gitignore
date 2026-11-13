@@ -18,6 +18,7 @@ __pycache__/
 *.pt
 !ai_model/yolov8n.pt
 !ai_model/yolo26n.pt
+!ai_model/weights/best.pt
 
 # Fichiers auxiliaires LaTeX
 *.aux

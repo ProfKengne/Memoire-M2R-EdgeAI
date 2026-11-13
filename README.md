@@ -7,6 +7,7 @@ Le système détecte localement les personnes dans un flux vidéo avec **YOLOv8n
 ## 📁 Architecture du dépôt
 
 * `ai_model/` : configuration du jeu de données (`data.yaml`) et script d'entraînement (`train.py`).
+  * `weights/best.pt` : poids du modèle YOLOv8n affiné (meilleure époque, 74 sur 100), utilisables directement par les scripts d'inférence (`YOLO("ai_model/weights/best.pt")`).
 * `pc_inference/` : scripts d'inférence temps réel en Python (OpenCV, Ultralytics) :
   * `detect_rt_INTRUSION_save_JSON_WIFI.py` : alerte par Wi-Fi (UDP, port 4210), seuil τ = 0,55 ;
   * `detect_rt_INTRUSION_save_JSON_SERIE.py` : alerte par liaison série (115 200 bauds), seuil τ = 0,35 ;
@@ -18,6 +19,7 @@ Le système détecte localement les personnes dans un flux vidéo avec **YOLOv8n
   * `main_WIFI.cpp` : version Wi-Fi UDP avec interface graphique animée sur l'OLED (renseigner `VOTRE_SSID` et `VOTRE_MOT_DE_PASSE` localement, **ne jamais publier les vrais identifiants**).
 * `resultats/` : mesures temporelles de la chaîne complète (session Wi-Fi de 5 min).
 * `docs/` : documentation technique.
+* `documents/` : mémoire de Master 2 Recherche (version corrigée après soutenance) et présentation de la soutenance, au format PDF.
 
 ## 🖥️ Interface de l'afficheur OLED
 
